@@ -22,7 +22,7 @@ $ErrorActionPreference = 'Stop'
 try {
     . (Join-Path $PSScriptRoot 'lib\Common.ps1')
     Assert-ThemeName $Name
-    if ($Author -eq '') { $Author = $script:DefaultUser }
+    if ($Author -eq '') { $Author = "$script:DefaultUser (generated with Claude)" }
     if ($AuthorUrl -eq '') { $AuthorUrl = "https://github.com/$script:DefaultUser" }
 
     $dest = Join-Path $script:ThemesDir $Name
