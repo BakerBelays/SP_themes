@@ -1,0 +1,119 @@
+/*
+ * SolarizedDark: Ethan Schoonover's Solarized Dark palette for Spotify.
+ * https://ethanschoonover.com/solarized/
+ *
+ * Mapping (color.ini): main/sidebar = base03, player/card = base02,
+ * text = base1, subtext = base0, misc/disabled = base01,
+ * accents = blue (button) and cyan (button-active), errors = red.
+ *
+ * Colors come only from var(--spice-*) / rgba(var(--spice-rgb-*), a).
+ * Selectors prefer data-testid / aria-label and Spicetify-mapped classes.
+ */
+
+/* ---------- Global ---------- */
+:root {
+  --solarized-radius: 6px;
+}
+
+/* Links and hovered text use the cyan accent */
+a:hover {
+  color: var(--spice-button-active) !important;
+}
+
+/* ---------- Sidebar (library / nav) ---------- */
+.Root__nav-bar {
+  background-color: var(--spice-sidebar);
+}
+
+/* Separate the panels with a thin base02 border instead of a shade change */
+.Root__nav-bar > nav,
+.Root__nav-bar [data-testid="left-sidebar"],
+.Root__main-view {
+  border: 1px solid var(--spice-card);
+  border-radius: var(--solarized-radius);
+}
+
+/* ---------- Main view ---------- */
+.Root__main-view {
+  background-color: var(--spice-main);
+}
+
+/* Flatten Spotify's gradient header so the page stays solid base03 */
+.main-entityHeader-backgroundColor,
+.main-actionBarBackground-background {
+  background-color: var(--spice-main) !important;
+  background-image: none !important;
+}
+
+/* ---------- Player bar ---------- */
+.Root__now-playing-bar {
+  background-color: var(--spice-player);
+  border-top: 1px solid rgba(var(--spice-rgb-misc), 0.4);
+}
+
+.x-progressBar-fillColor {
+  background-color: var(--spice-button) !important;
+}
+
+.x-progressBar-progressBarBg {
+  background-color: var(--spice-button-disabled) !important;
+}
+
+/* Play / pause button: blue with a base03 icon */
+[data-testid="control-button-playpause"] {
+  background-color: var(--spice-button) !important;
+  color: var(--spice-main) !important;
+}
+
+[data-testid="control-button-playpause"]:hover {
+  background-color: var(--spice-button-active) !important;
+}
+
+/* ---------- Cards ---------- */
+.main-card-card {
+  background-color: var(--spice-card);
+  border-radius: var(--solarized-radius);
+}
+
+.main-card-card:hover {
+  background-color: rgba(var(--spice-rgb-misc), 0.35);
+}
+
+.main-card-card img,
+.main-cardImage-image {
+  border-radius: calc(var(--solarized-radius) - 2px);
+}
+
+/* Big play button on cards and playlist headers */
+.main-playButton-PlayButton > button > span,
+[data-testid="play-button"] > span {
+  background-color: var(--spice-button) !important;
+  color: var(--spice-main) !important;
+}
+
+/* ---------- Track rows ---------- */
+/* Hover / selected rows use base02 as the background highlight, per Solarized */
+.main-trackList-trackListRow:hover {
+  background-color: var(--spice-card);
+}
+
+.main-trackList-trackListRow[aria-selected="true"] {
+  background-color: rgba(var(--spice-rgb-button), 0.2);
+}
+
+/* ---------- Scrollbars ---------- */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb,
+.os-scrollbar-handle {
+  background-color: rgba(var(--spice-rgb-misc), 0.6) !important;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover,
+.os-scrollbar-handle:hover {
+  background-color: var(--spice-subtext) !important;
+}

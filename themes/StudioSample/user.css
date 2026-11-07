@@ -1,0 +1,112 @@
+/*
+ * StudioSample: midnight teal with warm coral accents, soft rounded cards
+ * and a glowing progress bar.
+ *
+ * Colors come only from color.ini via var(--spice-*) / rgba(var(--spice-rgb-*), a).
+ * Selectors prefer data-testid / aria-label and Spicetify-mapped classes
+ * (.Root__*, .main-*, .x-*) because Spotify's hashed class names change.
+ */
+
+/* ---------- Global ---------- */
+:root {
+  --studio-radius: 12px;
+  --studio-glow: 0 0 10px rgba(var(--spice-rgb-button), 0.55);
+}
+
+/* ---------- Sidebar (library / nav) ---------- */
+.Root__nav-bar {
+  background-color: var(--spice-sidebar);
+}
+
+/* Library and nav panels: soft rounded panels with a faint teal edge */
+.Root__nav-bar > nav,
+.Root__nav-bar [data-testid="left-sidebar"] {
+  border-radius: var(--studio-radius);
+  box-shadow: inset 0 0 0 1px rgba(var(--spice-rgb-misc), 0.12);
+}
+
+/* ---------- Main view ---------- */
+.Root__main-view {
+  background-color: var(--spice-main);
+  border-radius: var(--studio-radius);
+}
+
+/* ---------- Player bar ---------- */
+.Root__now-playing-bar {
+  background-color: var(--spice-player);
+  border-top: 1px solid rgba(var(--spice-rgb-misc), 0.15);
+}
+
+/* Progress and volume bars: coral fill with a soft glow */
+.x-progressBar-fillColor {
+  background-color: var(--spice-button) !important;
+  box-shadow: var(--studio-glow);
+}
+
+.x-progressBar-progressBarBg {
+  background-color: rgba(var(--spice-rgb-button-disabled), 0.6) !important;
+  border-radius: 999px;
+}
+
+/* Play / pause button */
+[data-testid="control-button-playpause"] {
+  background-color: var(--spice-button) !important;
+  color: var(--spice-main) !important;
+  box-shadow: var(--studio-glow);
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+[data-testid="control-button-playpause"]:hover {
+  background-color: var(--spice-button-active) !important;
+  transform: scale(1.06);
+}
+
+/* ---------- Cards ---------- */
+.main-card-card {
+  background-color: var(--spice-card);
+  border-radius: var(--studio-radius);
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.main-card-card:hover {
+  background-color: var(--spice-tab-active);
+  box-shadow: 0 8px 24px rgba(var(--spice-rgb-shadow), 0.45);
+}
+
+.main-card-card img,
+.main-cardImage-image {
+  border-radius: calc(var(--studio-radius) - 4px);
+}
+
+/* Big green play button on cards and playlist headers becomes coral */
+.main-playButton-PlayButton > button > span,
+[data-testid="play-button"] > span {
+  background-color: var(--spice-button) !important;
+  color: var(--spice-main) !important;
+}
+
+/* ---------- Track rows ---------- */
+.main-trackList-trackListRow:hover {
+  background-color: rgba(var(--spice-rgb-misc), 0.1);
+}
+
+.main-trackList-trackListRow[aria-selected="true"] {
+  background-color: rgba(var(--spice-rgb-button), 0.18);
+}
+
+/* ---------- Scrollbars ---------- */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb,
+.os-scrollbar-handle {
+  background-color: rgba(var(--spice-rgb-misc), 0.35) !important;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover,
+.os-scrollbar-handle:hover {
+  background-color: rgba(var(--spice-rgb-misc), 0.6) !important;
+}

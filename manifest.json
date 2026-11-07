@@ -1,0 +1,43 @@
+[
+  {
+    "name": "SolarizedDark",
+    "description": "Ethan Schoonover's Solarized Dark palette for Spotify: base03 backgrounds, base0/base1 text and blue/cyan accents.",
+    "preview": "themes/SolarizedDark/preview.png",
+    "readme": "themes/SolarizedDark/README.md",
+    "usercss": "themes/SolarizedDark/user.css",
+    "schemes": "themes/SolarizedDark/color.ini",
+    "branch": "main",
+    "authors": [
+      {
+        "name": "BakerBelays",
+        "url": "https://github.com/BakerBelays"
+      }
+    ],
+    "tags": [
+      "dark",
+      "solarized",
+      "blue"
+    ]
+  },
+  {
+    "name": "StudioSample",
+    "description": "Midnight teal with warm coral accents, soft rounded cards and a glowing progress bar.",
+    "preview": "themes/StudioSample/preview.png",
+    "readme": "themes/StudioSample/README.md",
+    "usercss": "themes/StudioSample/user.css",
+    "schemes": "themes/StudioSample/color.ini",
+    "branch": "main",
+    "authors": [
+      {
+        "name": "BakerBelays",
+        "url": "https://github.com/BakerBelays"
+      }
+    ],
+    "tags": [
+      "dark",
+      "light",
+      "teal",
+      "coral"
+    ]
+  }
+]

@@ -8,6 +8,7 @@ Each theme lives in `themes/<Name>/` with its own README, screenshot and color s
 
 | Theme | Folder |
 |---|---|
+| SolarizedDark | [themes/SolarizedDark](themes/SolarizedDark) |
 | StudioSample | [themes/StudioSample](themes/StudioSample) |
 
 ## Install
