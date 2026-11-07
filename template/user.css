@@ -1,0 +1,57 @@
+/*
+ * Theme starter. Colors come only from color.ini through var(--spice-*) and
+ * var(--spice-rgb-*) (use the rgb form with rgba(), e.g. rgba(var(--spice-rgb-shadow), .4)).
+ *
+ * Spotify's hashed class names change between versions. Prefer, in order:
+ *   1. --spice-* variables (already applied by Spicetify with replace_colors)
+ *   2. stable attributes: [data-testid="..."], [aria-label="..."]
+ *   3. Spicetify-mapped readable classes (.Root__*, .main-*, .x-*)
+ * Inspect with: spicetify enable-devtools, then Ctrl+Shift+I inside Spotify.
+ */
+
+/* ---------- Global ---------- */
+:root {
+  --studio-radius: 8px;
+}
+
+/* ---------- Sidebar (library / nav) ---------- */
+.Root__nav-bar {
+  background-color: var(--spice-sidebar);
+}
+
+/* ---------- Main view ---------- */
+.Root__main-view {
+  background-color: var(--spice-main);
+}
+
+/* ---------- Player bar ---------- */
+.Root__now-playing-bar {
+  background-color: var(--spice-player);
+}
+
+/* ---------- Cards ---------- */
+.main-card-card {
+  background-color: var(--spice-card);
+  border-radius: var(--studio-radius);
+}
+
+.main-card-card:hover {
+  background-color: var(--spice-tab-active);
+}
+
+/* ---------- Scrollbars ---------- */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb,
+.os-scrollbar-handle {
+  background-color: rgba(var(--spice-rgb-subtext), 0.35) !important;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover,
+.os-scrollbar-handle:hover {
+  background-color: rgba(var(--spice-rgb-subtext), 0.6) !important;
+}

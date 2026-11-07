@@ -1,0 +1,18 @@
+# OS junk
+Thumbs.db
+ehthumbs.db
+desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+._*
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+~$*
+
+# Claude Code per-user settings (shared settings.json is committed)
+.claude/settings.local.json
